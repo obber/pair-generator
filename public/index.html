@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello</title>
+  
+  <!-- css -->
+  <link rel="stylesheet" href="components/normalize-css/normalize.css">
+  <link rel="stylesheet" href="components/bootstrap-grid/grid.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Student Pair Generator</h1>
+
+    <div class="input-form">
+      <section>
+        <label for="number-of-sprints">How many sprints?</label><br>
+        <input type="text" id="sprints">
+      </section>
+
+      <section>
+        <label for="names-of-students">Names of students (seperated by line break):</label><br>
+        <textarea name="name-of-students" id="students" cols="30" rows="10"></textarea>
+      </section>
+
+      <button class="input-form-submit">Get Pairs</button>
+    </div>
+
+    <div class="results"></div>
+  </div>
+
+  <!-- authored JS -->
+  <script src="js/logic.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

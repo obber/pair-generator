@@ -1,0 +1,22 @@
+{
+  "name": "make-pairs",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Kan Adachi <Kadachi1023@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^4.2.0",
+    "jquery": "^3.1.0"
+  }
+}
