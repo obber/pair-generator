@@ -13,11 +13,7 @@ $(".input-form-submit").click(function(e) {
     students.pop();
   }
 
-  if (students.length % 2) {
-    results = makePairsOdd(students);
-  } else {
-    results = makePairsEven(students);
-  }
+  results = makePairs(students);
 
   while(results.length > sprints) {
     results.pop();
