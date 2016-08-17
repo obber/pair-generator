@@ -6,31 +6,50 @@
   
   <!-- css -->
   <link rel="stylesheet" href="components/normalize-css/normalize.css">
-  <link rel="stylesheet" href="components/bootstrap-grid/dist/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="components/bootstrap-grid-only/css/grid12.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.css">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+  <!-- Typekit -->
+  <script src="https://use.typekit.net/wvc2eye.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
-  <div class="container">
-    <h1>Student Pair Generator</h1>
+  <div class="container main-container">
+    <div class="col-md-10 col-md-offset-1 content container">
+      <h1 class="logo">
+        <div class="logo-glyph">
+          <i class="icon-people"></i>
+        </div>
+        MKS Student Pair Generator
+      </h1>
 
-    <div class="input-form">
-      <section>
-        <label for="number-of-sprints">How many sprints?</label><br>
-        <input type="text" id="sprints">
-      </section>
+      <div class="col-md-6 col-md-offset-3 input-form">
 
-      <section>
-        <label for="names-of-students">Names of students (seperated by line break):</label><br>
-        <textarea name="name-of-students" id="students" cols="30" rows="10"></textarea>
-      </section>
+        <div>
+          <section>
+            <label for="number-of-sprints">How many sprints?</label>
+            <input type="number" id="sprints">
+          </section>
 
-      <button class="input-form-submit">Get Pairs</button>
+          <section>
+            <label for="names-of-students">Names of students (seperated by line break):</label>
+            <textarea name="name-of-students" id="students" cols="30" rows="7"></textarea>
+          </section>
+
+          <button class="input-form-submit"><i class="icon-chemistry"></i><span>Get Pairs</span></button>
+        </div>
+      </div>
     </div>
 
-    <div class="results"></div>
+    <div class="clearfix"></div>
+
+    <div class="col-md-6 col-md-offset-3 results">
+    </div>
+      
   </div>
 
   <!-- authored JS -->

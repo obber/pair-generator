@@ -1,8 +1,7 @@
 const makePairs = (students) => {
-  if (students.length % 2 !== 0) students.push('---');
+  if (students.length % 2 !== 0) students.push('');
   let a = students.slice(0, students.length / 2);
   let b = students.slice(students.length / 2);
-  let sprintPairs = {};
   let counter = 0;
   let temp;
   let results = [];

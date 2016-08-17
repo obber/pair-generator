@@ -20,14 +20,20 @@ $(".input-form-submit").click(function(e) {
   }
 
   results.forEach(function(single, index) {
-    var $container = $("<div class='result-single'><h3>Sprint " + (index + 1) + "</h3></div>")
+    var $container = $("<div class='result-single'><h3 class='result-single-title'><i class=\"icon-rocket\"></i>Sprint " + (index + 1) + "</h3></div>")
 
-    var $pairs = $("<ul></ul>");
+    var $pairs = $("<table></table>");
     single.forEach(function(pair) {
-      $pairs.append($("<li></li>").text(pair));
+      var $cell1 = $("<td></td>").text(pair[0]);
+      var $cell2 = $("<td></td>").text(pair[1]);
+      var $row = $("<tr></tr>").append($cell1, $cell2);
+      $pairs.append($row);
     });
 
     var $single = $container.append($pairs);
     $(".results").append($single);
   });
+
+  $(".results").show();
+  $("html, body").animate({ scrollTop: $('.results').offset().top - 40 }, 700);
 });
