@@ -1,6 +1,8 @@
 $(".input-form-submit").click(function(e) {
   e.preventDefault();
 
+  // put up the spinner
+
   // reset results
   $(".results").html("");
 
@@ -14,6 +16,8 @@ $(".input-form-submit").click(function(e) {
   }
 
   results = makePairs(students);
+
+  makePost(results);
 
   while(results.length > sprints) {
     results.pop();
@@ -33,7 +37,27 @@ $(".input-form-submit").click(function(e) {
     var $single = $container.append($pairs);
     $(".results").append($single);
   });
-
-  $(".results").show();
-  $("html, body").animate({ scrollTop: $('.results').offset().top - 40 }, 700);
 });
+
+var makePost = function(data) {
+  $.ajax('/txt/create', {
+    method: 'POST', 
+    contentType: 'application/json',
+    data: JSON.stringify(data),
+    success: function(resp) {
+      console.log("successful response heard! resp = ", resp);
+      var txtUrl = '/txt/' + resp.id;
+      $(".txtfile").append($("<p class='url-field'><a target='_blank' href='" + txtUrl + "'>" + txtUrl.slice(1) + "</a></p>"));
+      showElements();
+    },
+    error: function(err) {
+      console.error("unsuccessful response. err = ", err);
+    }
+  })
+}
+
+var showElements = function() {
+  $(".txtfile-container").show();
+  $(".results").show();
+  $("html, body").animate({ scrollTop: $('.txtfile-container').offset().top - 40 }, 700);
+}

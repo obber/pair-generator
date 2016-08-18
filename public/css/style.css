@@ -96,6 +96,40 @@ html {
   margin-right: 3px;
 }
 
+.txtfile-container {
+  display: none;
+}
+
+.txtfile {
+  background: #223757;
+  padding: 35px;
+  border: 1px solid #586e92;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+.txtfile h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.txtfile .url-field {
+  margin: 0;
+  border-radius: 3px;
+  padding: 15px;
+  background-color: rgba(0,0,0,0.2);
+  text-align: center;
+  font-size: 28px;
+}
+
+.txtfile .url-field a {
+  color: #56c8ff;
+}
+
+.txtfile .url-field a:hover {
+  color: #8cdaff;
+}
+
 .results {
   display: none;
 }
@@ -113,7 +147,8 @@ html {
   margin-top: 0;
 }
 
-.result-single-title i {
+.result-single-title i,
+.txtfile h3 i {
   position: relative;
   top: 2px;
   margin-right: 7px;
