@@ -6,6 +6,7 @@ $(".input-form-submit").click(function(e) {
 
   // reset results
   $(".results").html("");
+  $(".txtfile").html("<h3><i class=\"icon-docs\"></i>Textfile</h3>");
 
   var sprints = parseInt($("#sprints").val());
   var students = $("#students").val().split("\n");
@@ -55,12 +56,14 @@ var makePost = function(data) {
       console.error("unsuccessful response. err = ", err);
     }
   })
-}
+};
 
 var showElements = function() {
-  $(".loading-container").fadeOut(400, function() {
-    $(".txtfile-container").show();
-    $(".results").show();
-    $("html, body").animate({ scrollTop: $('.txtfile-container').offset().top - 40 }, 700);
-  });
-}
+  setTimeout(function() {
+    $(".loading-container").fadeOut(400, function() {
+      $(".txtfile-container").show();
+      $(".results").show();
+      $("html, body").animate({ scrollTop: $('.txtfile-container').offset().top - 40 }, 700);
+    });
+  }, 800);
+};
