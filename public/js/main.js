@@ -2,6 +2,7 @@ $(".input-form-submit").click(function(e) {
   e.preventDefault();
 
   // put up the spinner
+  $(".loading-container").fadeIn();
 
   // reset results
   $(".results").html("");
@@ -17,11 +18,11 @@ $(".input-form-submit").click(function(e) {
 
   results = makePairs(students);
 
-  makePost(results);
-
   while(results.length > sprints) {
     results.pop();
   }
+
+  makePost(results);
 
   results.forEach(function(single, index) {
     var $container = $("<div class='result-single'><h3 class='result-single-title'><i class=\"icon-rocket\"></i>Sprint " + (index + 1) + "</h3></div>")
@@ -57,7 +58,9 @@ var makePost = function(data) {
 }
 
 var showElements = function() {
-  $(".txtfile-container").show();
-  $(".results").show();
-  $("html, body").animate({ scrollTop: $('.txtfile-container').offset().top - 40 }, 700);
+  $(".loading-container").fadeOut(400, function() {
+    $(".txtfile-container").show();
+    $(".results").show();
+    $("html, body").animate({ scrollTop: $('.txtfile-container').offset().top - 40 }, 700);
+  });
 }

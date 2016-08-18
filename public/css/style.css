@@ -30,6 +30,7 @@ html {
   padding: 35px;
   border: 1px solid #586e92;
   border-radius: 5px;
+  position: relative;
 }
 
 .input-form input, 
@@ -173,4 +174,53 @@ table tr td {
 
 table tr:nth-child(odd) {
   background-color: rgba(0,0,0,0.1);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  background-color: rgba(255,255,255,0.8);
+
+  border-radius: 100%;  
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+.loading-container {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.loading {
+  display: flex;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
